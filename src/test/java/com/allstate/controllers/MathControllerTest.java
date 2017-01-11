@@ -42,6 +42,15 @@ public class MathControllerTest {
     public void shouldReturnFactorialOfAnInteger() throws Exception {
         this.mvc.perform(get("/math/factorial/5"))
                 .andExpect(status().isOk())
+                .andExpect(jsonPath("$.original", is(5)))
                 .andExpect((jsonPath("$.Factorial", is(120))));
+    }
+
+    @Test
+    public void shouldReturnFibonacciOfAnInteger() throws Exception {
+        this.mvc.perform(get("/math/fibonacci/8"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.original", is(8)))
+                .andExpect((jsonPath("$.Fibonacci", is(21))));
     }
 }
