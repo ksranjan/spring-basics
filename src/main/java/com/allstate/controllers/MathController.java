@@ -18,4 +18,12 @@ public class MathController {
         map.put("Square", result);
         return map;
     }
+
+    @RequestMapping(value = "/math/factorial/{x}")
+    public Map<String, Integer> factorial(@PathVariable int x){
+        int result = Math.factorial(x);
+        Map<String, Integer> map = new HashMap<>();
+        map.put("Factorial", result);
+        return map;
+    }
 }

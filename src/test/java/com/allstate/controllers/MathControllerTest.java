@@ -37,4 +37,11 @@ public class MathControllerTest {
                 .andExpect(status().isOk())
                 .andExpect((jsonPath("$.Square", is(16))));
     }
+
+    @Test
+    public void shouldReturnFactorialOfAnInteger() throws Exception {
+        this.mvc.perform(get("/math/factorial/5"))
+                .andExpect(status().isOk())
+                .andExpect((jsonPath("$.Factorial", is(120))));
+    }
 }
