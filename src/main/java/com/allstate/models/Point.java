@@ -9,7 +9,7 @@ public class Point {
     static double diffX, diffY;
 
     private int x, y;
-    private static Map<String, Double> details ;
+    private static Map<String, Double> details = new HashMap<>(); ;
 
     public int getX() {
         return x;
@@ -33,7 +33,7 @@ public class Point {
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
-        details = new HashMap<>();
+       // details = new HashMap<>();
     }
     public static Map<String, Double> getDetails(Point[] points) {
         details.put("slope", getSlope(points));
