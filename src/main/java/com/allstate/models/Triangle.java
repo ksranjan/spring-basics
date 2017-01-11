@@ -1,15 +1,15 @@
 package com.allstate.models;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Triangle {
     private int height;
     private int width;
 
-    public static double area(List<Triangle> triangles){
-        return 0.3;
+    public static List<Double> area(List<Triangle> triangles){
+        return triangles.stream().map(triangle -> triangle.height * triangle.width * 0.5).collect(Collectors.toList());
     }
-
     public Triangle() {
     }
 

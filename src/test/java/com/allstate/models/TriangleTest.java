@@ -27,7 +27,11 @@ public class TriangleTest {
         List<Triangle> triangles = new ArrayList<>();
         triangles.add(t1);
         triangles.add(t2);
-        double result = Triangle.area(triangles);
-        assertEquals(21, result, 0.1);
+        List<Double> areas = Triangle.area(triangles);
+        List<Double> expectedAreas = new ArrayList<>();
+        expectedAreas.add(6.0);
+        expectedAreas.add(15.0);
+        assertEquals(expectedAreas.get(0), areas.get(0), 0.1);
+        assertEquals(expectedAreas.get(1), areas.get(1), 0.1);
     }
 }
